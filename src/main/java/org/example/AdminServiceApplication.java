@@ -10,10 +10,10 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class AdminServiceApplication {
 
-    @Value("${spring.rabbitmq.virtual-host}")
+    @Value("${spring.rabbitmq.virtual-host:NOT_FOUND}")
     private String virtualHost;
 
-    @Value("${spring.rabbitmq.username}")
+    @Value("${spring.rabbitmq.username:NOT_FOUND}")
     private String rabbitUser;
     public static void main(String[] args) {
         SpringApplication.run(AdminServiceApplication.class, args);
