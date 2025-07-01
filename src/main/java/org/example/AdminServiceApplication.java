@@ -10,11 +10,8 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class AdminServiceApplication {
 
-    @Value("${spring.rabbitmq.virtual-host:NOT_FOUND}")
-    private String virtualHost;
-
-    @Value("${spring.rabbitmq.username:NOT_FOUND}")
-    private String rabbitUser;
+    @Value("${spring.rabbitmq.addresses:NOT_FOUND}")
+    private String rabbitUri;
     public static void main(String[] args) {
         SpringApplication.run(AdminServiceApplication.class, args);
     }
@@ -24,8 +21,7 @@ public class AdminServiceApplication {
         return new Queue("jobQueue", true);
     }
     @PostConstruct
-    public void logRabbitMQConfig() {
-        System.out.println(">>>> Spring loaded RabbitMQ Virtual Host: " + virtualHost);
-        System.out.println(">>>> Spring loaded RabbitMQ Username: " + rabbitUser);
+    public void logRabbitUri() {
+        System.out.println(">>>> Loaded RabbitMQ URI: " + rabbitUri);
     }
 }
