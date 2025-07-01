@@ -12,6 +12,10 @@ public class AdminServiceApplication {
 
     @Value("${spring.rabbitmq.addresses:NOT_FOUND}")
     private String rabbitUri;
+
+    @Value("${SPRING_RABBITMQ_ADDRESS:NOT_FOUND}")
+    private String rabbitUri2;
+
     public static void main(String[] args) {
         SpringApplication.run(AdminServiceApplication.class, args);
     }
@@ -23,5 +27,9 @@ public class AdminServiceApplication {
     @PostConstruct
     public void logRabbitUri() {
         System.out.println(">>>> Loaded RabbitMQ URI: " + rabbitUri);
+    }
+    @PostConstruct
+    public void logRabbitUri2() {
+        System.out.println(">>>> Loaded RabbitMQ URI: " + rabbitUri2);
     }
 }
