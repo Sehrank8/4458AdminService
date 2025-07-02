@@ -2,6 +2,8 @@
 
 This microservice is responsible for managing job postings in the **SE4458 Job Search Web Application**. Admins and company users use this service to add, update, or retrieve job listings. It uses **MongoDB** as its data source and publishes new job events via **RabbitMQ** to notify other services.
 
+[THE IMPORTANT DETAILS ARE HERE](https://github.com/Sehrank8/4458ApiGateway)
+
 ---
 
 ## 🚀 Overview
